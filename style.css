@@ -1,0 +1,14 @@
+/* Custom FAQ Icon logic */
+.faq-icon::before {
+    content: "+";
+}
+
+input:checked ~ label .faq-icon::before {
+    content: "−";
+}
+
+/* Smooth transition for the content */
+.faq-content {
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
