@@ -24,19 +24,39 @@
 </head>
 <body class="bg-gray-50">
 
-    <header class="bg-hero-gradient text-white pb-20"> <nav class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white/10 backdrop-blur-md border-b border-white/10">
-    <div class="flex items-center gap-2"> </div> </nav>
-        <nav class="flex items-center justify-between px-6 py-5 max-w-6xl mx-auto">
-            <div class="flex items-center gap-2">
-                <div class="bg-white p-1 rounded-lg">
-                    <svg class="w-6 h-6 text-[#0076FF]" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                </div>
-                <span class="text-2xl font-black italic tracking-tighter">FastQash</span>
+    <header class="bg-hero-gradient text-white pb-20"> <nav class="sticky top-0 z-50 w-full bg-white/10 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-2">
+            <div class="bg-white p-1 rounded-lg">
+                <svg class="w-6 h-6 text-[#0076FF]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
             </div>
-            <button class="p-2 border border-white/30 rounded-md">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </nav>
+            <span class="text-2xl font-black italic tracking-tighter text-white">FastQash</span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#earning-methods" class="text-white font-semibold hover:text-cyan-200 transition">How it Works</a>
+            <a href="#faq" class="text-white font-semibold hover:text-cyan-200 transition">FAQ</a>
+            <a href="#is-legit" class="text-white font-semibold hover:text-cyan-200 transition">Is it Legit?</a>
+            <a href="https://www.mulapal1.org" class="bg-white text-[#0076FF] px-6 py-2 rounded-full font-bold hover:shadow-lg transition">Join Today</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden p-2 border border-white/30 rounded-md text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0076FF] border-b border-white/10 px-6 py-6 flex flex-col gap-4 animate-fade-in-down">
+        <a href="#how-it-works" class="text-white text-lg font-bold border-b border-white/10 pb-2">How it Works</a>
+        <a href="#faq" class="text-white text-lg font-bold border-b border-white/10 pb-2">FAQ</a>
+        <a href="#is-legit" class="text-white text-lg font-bold border-b border-white/10 pb-2">Is FastQash Legit?</a>
+        <a href="#join" class="bg-cyan-300 text-blue-900 text-center py-3 rounded-xl font-black">JOIN TODAY</a>
+    </div>
+</nav>
+
 <div class="relative overflow-hidden bg-hero-gradient pt-16 pb-24 lg:pt-32 lg:pb-40">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
@@ -258,6 +278,22 @@
     <footer class="bg-white border-t border-gray-200 py-10 text-center">
         <p class="text-gray-400 text-sm">© 2026 FastQash Community. All rights reserved.</p>
     </footer>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Toggle the mobile menu
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
 
 </body>
 </html>
