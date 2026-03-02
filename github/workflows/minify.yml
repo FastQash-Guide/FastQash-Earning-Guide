@@ -1,0 +1,23 @@
+name: Minify HTML/CSS/JS
+on:
+  push:
+    branches:
+      - main # Or your default branch name
+
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Minify HTML
+        uses: chaitanyapotti/html-minify-action@master
+        with:
+          directory: './'
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
